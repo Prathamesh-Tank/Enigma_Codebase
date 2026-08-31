@@ -1,0 +1,95 @@
+Cache Configuration: 16 MiB, 2 tag skews, 8 average tags/bucket/skew
+Tag Store: 32768 total buckets, 16384 buckets/skew, spill threshold=14
+Data Store: 16384 sets x 16 ways = 262144 lines
+Replacement: round-robin SSL set selection + uniform local-random way victim
+Simulation Parameters: INSTALLATIONS=1000000000, SEED=1
+
+Starting -- (dot printed every 100000000 installations)
+.......... 1Bn
+
+
+Bucket-Occupancy Snapshot at End of Experiment
+
+Occupancy: 		 Count
+Bucket[ 0 Fill]: 	 0 	 (0.00)
+Bucket[ 1 Fill]: 	 4 	 (0.01)
+Bucket[ 2 Fill]: 	 14 	 (0.04)
+Bucket[ 3 Fill]: 	 82 	 (0.25)
+Bucket[ 4 Fill]: 	 327 	 (1.00)
+Bucket[ 5 Fill]: 	 1116 	 (3.41)
+Bucket[ 6 Fill]: 	 3045 	 (9.29)
+Bucket[ 7 Fill]: 	 5990 	 (18.28)
+Bucket[ 8 Fill]: 	 9333 	 (28.48)
+Bucket[ 9 Fill]: 	 8829 	 (26.94)
+Bucket[10 Fill]: 	 3658 	 (11.16)
+Bucket[11 Fill]: 	 367 	 (1.12)
+Bucket[12 Fill]: 	 3 	 (0.01)
+Bucket[13 Fill]: 	 0 	 (0.00)
+Bucket[14 Fill]: 	 0 	 (0.00)
+Bucket[15 Fill]: 	 0 	 (0.00)
+Bucket[16 Fill]: 	 0 	 (0.00)
+
+Distribution of Bucket Occupancy Observed at the Two Candidate Tag Buckets
+
+Occupancy: 		            Count 	 P(Bucket=k balls)
+Bucket[ 0 Fill]: 	             7901 	 ( 0.000395%)
+Bucket[ 1 Fill]: 	           127056 	 ( 0.006353%)
+Bucket[ 2 Fill]: 	          1022347 	 ( 0.051117%)
+Bucket[ 3 Fill]: 	          5449100 	 ( 0.272455%)
+Bucket[ 4 Fill]: 	         21746918 	 ( 1.087346%)
+Bucket[ 5 Fill]: 	         68969828 	 ( 3.448491%)
+Bucket[ 6 Fill]: 	        178172382 	 ( 8.908619%)
+Bucket[ 7 Fill]: 	        369297949 	 (18.464897%)
+Bucket[ 8 Fill]: 	        568660109 	 (28.433005%)
+Bucket[ 9 Fill]: 	        541260473 	 (27.063024%)
+Bucket[10 Fill]: 	        223398455 	 (11.169923%)
+Bucket[11 Fill]: 	         21727885 	 ( 1.086394%)
+Bucket[12 Fill]: 	           159589 	 ( 0.007979%)
+Bucket[13 Fill]: 	                8 	 ( 0.000000%)
+Bucket[14 Fill]: 	                0 	 ( 0.000000%)
+Bucket[15 Fill]: 	                0 	 ( 0.000000%)
+Bucket[16 Fill]: 	                0 	 ( 0.000000%)
+
+Distribution of Destination-Bucket Occupancy on Load-Aware Tag Insertion
+Balls in destination bucket (k) 	 Insertions
+ 0:				             7901 ( 0.000790%)
+ 1:				           127051 ( 0.012705%)
+ 2:				          1022027 ( 0.102203%)
+ 3:				          5438473 ( 0.543847%)
+ 4:				         21557394 ( 2.155739%)
+ 5:				         66802605 ( 6.680261%)
+ 6:				        161564803 (16.156480%)
+ 7:				        284333151 (28.433315%)
+ 8:				        304469603 (30.446960%)
+ 9:				        139636986 (13.963699%)
+10:				         14920381 ( 1.492038%)
+11:				           119620 ( 0.011962%)
+12:				                5 ( 0.000000%)
+13:				                0 ( 0.000000%)
+14:				                0 ( 0.000000%)
+15:				                0 ( 0.000000%)
+16:				                0 ( 0.000000%)
+
+Spill Count: 0 ( 0.000000%)
+Cuckoo Spill Count: 0 ( 0.000000%)
+
+SSL / Local-Random Replacement Statistics
+Total measured data-store replacements: 1000000000
+Per-set SSL selections: min=61035, max=61036, difference=1
+Local-way victim counts:
+  Way[ 0]:         62506316 ( 6.2506%)
+  Way[ 1]:         62514460 ( 6.2514%)
+  Way[ 2]:         62490369 ( 6.2490%)
+  Way[ 3]:         62501696 ( 6.2502%)
+  Way[ 4]:         62506718 ( 6.2507%)
+  Way[ 5]:         62497040 ( 6.2497%)
+  Way[ 6]:         62490070 ( 6.2490%)
+  Way[ 7]:         62509839 ( 6.2510%)
+  Way[ 8]:         62510596 ( 6.2511%)
+  Way[ 9]:         62491401 ( 6.2491%)
+  Way[10]:         62500201 ( 6.2500%)
+  Way[11]:         62502688 ( 6.2503%)
+  Way[12]:         62491659 ( 6.2492%)
+  Way[13]:         62496027 ( 6.2496%)
+  Way[14]:         62491294 ( 6.2491%)
+  Way[15]:         62499626 ( 6.2500%)

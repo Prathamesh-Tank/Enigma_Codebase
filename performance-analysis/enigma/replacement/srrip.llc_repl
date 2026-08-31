@@ -1,0 +1,176 @@
+#include "cache.h"
+#include "ceaser.h"
+#include <cmath>
+#define maxRRPV 7
+//uint32_t rrpv[LLC_SET][LLC_WAY]; //defined in cache.h bu Sujeet
+
+// initialize replacement state
+void CACHE::llc_initialize_replacement()
+{
+    cout << "Initialize SRRIP state" << endl;
+
+    for (int i=0; i<LLC_SET; i++) {
+        for (int j=0; j<LLC_WAY; j++) {
+            block[i][j].rrpv = maxRRPV;
+        }
+    }
+}
+
+// find replacement victim for CEASER_S
+uint32_t CACHE::llc_find_victim_ceaser_s(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t ip, uint64_t full_addr, uint32_t type,int part)
+{
+    uint64_t increment_rounds = 0;
+    // look for the maxRRPV line
+    while (1)
+    {
+        for (uint32_t way=(part * (NUM_WAY/partitions)); way<NUM_WAY && (way < ((part+1) * (NUM_WAY/partitions))) ; way++)
+            if (block[set][way].rrpv == maxRRPV){
+                if (block[set][way].rrpv < 8)
+                    rrpv_victim_histogram[block[set][way].rrpv]++;
+                total_rrpv_increment_rounds += increment_rounds;
+                total_rrpv_eviction_samples++;
+                return way;
+		}
+           
+        for (uint32_t way=(part * (NUM_WAY/partitions)); way<NUM_WAY && (way < ((part+1) * (NUM_WAY/partitions))) ; way++) 
+            block[set][way].rrpv++;
+        increment_rounds++;
+    }
+
+    // WE SHOULD NOT REACH HERE
+    assert(0);
+    return 0;
+}
+uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t ip, uint64_t full_addr, uint32_t type)
+{
+    uint64_t increment_rounds = 0;
+    // look for the maxRRPV line
+    while (1)
+    {
+        for (int i=0; i<LLC_WAY; i++)
+            if (block[set][i].rrpv == maxRRPV) {
+                if (block[set][i].rrpv < 8)
+                    rrpv_victim_histogram[block[set][i].rrpv]++;
+                total_rrpv_increment_rounds += increment_rounds;
+                total_rrpv_eviction_samples++;
+                return i;
+            }
+
+        for (int i=0; i<LLC_WAY; i++)
+            block[set][i].rrpv++;
+        increment_rounds++;
+    }
+
+    // WE SHOULD NOT REACH HERE
+    assert(0);
+    return 0;
+}
+
+
+
+void CACHE::remap_llc_update_replacement_state(uint32_t oldset,uint32_t way,uint32_t newset,uint32_t newway,uint64_t tag)
+{
+		block[newset][newway].rrpv = block[oldset][way].rrpv;
+		block[oldset][way].rrpv=maxRRPV;
+		
+}
+
+// called on every cache hit and cache fill
+void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, uint64_t full_addr, uint64_t ip, uint64_t victim_addr, uint32_t type, uint8_t hit)
+{
+    string TYPE_NAME;
+    if (type == LOAD)
+        TYPE_NAME = "LOAD";
+    else if (type == RFO)
+        TYPE_NAME = "RFO";
+    else if (type == PREFETCH)
+        TYPE_NAME = "PF";
+    else if (type == WRITEBACK)
+        TYPE_NAME = "WB";
+    else
+        assert(0);
+
+    if (hit)
+        TYPE_NAME += "_HIT";
+    else
+        TYPE_NAME += "_MISS";
+
+    if ((type == WRITEBACK) && ip)
+        assert(0);
+
+    // uncomment this line to see the LLC accesses
+#ifdef LLC_PRINT
+  if(all_warmup_complete > NUM_CPUS){
+     cout << "CPU: " << cpu << "  "<<NAME <<" "<< setw(9) << TYPE_NAME << " set: " << setw(5) << set << " way: " << setw(2) << way;
+     cout << hex << " paddr: " << setw(12) << full_addr << " ip: " << setw(8) << ip << " victim_addr: " << victim_addr << dec << endl;
+  }
+#endif
+    if (hit)
+        block[set][way].rrpv = 0;
+    else
+        block[set][way].rrpv = maxRRPV-1;
+}
+
+// use this function to print out your own stats at the end of simulation
+void CACHE::llc_replacement_final_stats()
+{
+    for (int i = 0; i < 8; i++)
+        rrpv_final_histogram[i] = 0;
+
+    for (uint32_t set = 0; set < LLC_SET; set++) {
+        for (uint32_t way = 0; way < LLC_WAY; way++) {
+            if (block[set][way].rrpv < 8)
+                rrpv_final_histogram[block[set][way].rrpv]++;
+        }
+    }
+
+    uint64_t total_fills = 0;
+    uint64_t total_evictions = 0;
+    uint64_t min_fills = data_set_fill_count[0];
+    uint64_t max_fills = data_set_fill_count[0];
+    double fill_sum_sq = 0.0;
+
+    for (uint32_t set = 0; set < LLC_SET; set++) {
+        total_fills += data_set_fill_count[set];
+        total_evictions += data_set_eviction_count[set];
+        if (data_set_fill_count[set] < min_fills)
+            min_fills = data_set_fill_count[set];
+        if (data_set_fill_count[set] > max_fills)
+            max_fills = data_set_fill_count[set];
+        fill_sum_sq += double(data_set_fill_count[set]) * double(data_set_fill_count[set]);
+    }
+
+    double avg_fills = (LLC_SET > 0) ? (double(total_fills) / double(LLC_SET)) : 0.0;
+    double variance = (LLC_SET > 0) ? (fill_sum_sq / double(LLC_SET)) - (avg_fills * avg_fills) : 0.0;
+    if (variance < 0.0)
+        variance = 0.0;
+    double stddev = std::sqrt(variance);
+    double fill_cv = (avg_fills > 0.0) ? (stddev / avg_fills) : 0.0;
+
+    cout << NAME << " SRRIP Data-Store Fills: total=" << total_fills << " min=" << min_fills << " max=" << max_fills
+         << " avg=" << avg_fills << " cv=" << fill_cv << endl;
+    cout << NAME << " SRRIP Data-Store Evictions: " << total_evictions << endl;
+    cout << NAME << " SRRIP Data-Store Occupancy Histogram:";
+    for (uint32_t occ = 0; occ <= LLC_WAY; occ++)
+        cout << " [" << occ << "]=" << data_set_occupancy_histogram[occ];
+    cout << endl;
+    cout << NAME << " SRRIP Final RRPV Histogram:";
+    for (int i = 0; i < 8; i++)
+        cout << " [" << i << "]=" << rrpv_final_histogram[i];
+    cout << endl;
+    cout << NAME << " SRRIP Victim RRPV Histogram:";
+    for (int i = 0; i < 8; i++)
+        cout << " [" << i << "]=" << rrpv_victim_histogram[i];
+    cout << endl;
+    cout << NAME << " SRRIP Avg RRPV Increment Rounds Per Eviction: "
+         << (total_rrpv_eviction_samples ? (double(total_rrpv_increment_rounds) / double(total_rrpv_eviction_samples)) : 0.0)
+         << " total_rounds=" << total_rrpv_increment_rounds << " sampled_evictions=" << total_rrpv_eviction_samples << endl;
+}
+void CACHE::llc_update_ceaser_s(uint32_t set, uint32_t way)
+{
+}
+int CACHE::rrpv_value(uint32_t set, uint32_t way)
+{
+                return block[set][way].rrpv;
+}
+

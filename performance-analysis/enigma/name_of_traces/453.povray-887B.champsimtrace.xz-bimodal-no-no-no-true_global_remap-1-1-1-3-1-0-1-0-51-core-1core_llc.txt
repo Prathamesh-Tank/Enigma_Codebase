@@ -1,0 +1,1184 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 50000000
+Simulation Instructions: 50000000
+Number of CPUs: 1
+threads:1
+
+L1I Configuration:
+L1I_SET:64
+L1I_WAY:8
+L1I_RQ_SIZE:64
+L1I_WQ_SIZE:64
+L1I_PQ_SIZE:8
+L1I_MSHR_SIZE:8
+
+L1D Configuration:
+L1D_SET:64
+L1D_WAY:12
+L1D_RQ_SIZE:64
+L1D_WQ_SIZE:64
+L1D_PQ_SIZE:8
+L1D_MSHR_SIZE:16
+
+L2C Configuration:
+L2C_SET:1024
+L2C_WAY:8
+L2C_RQ_SIZE:32
+L2C_WQ_SIZE:32
+L2C_PQ_SIZE:16
+L2C_MSHR_SIZE:32
+
+LLC Configuration:
+LLC_SET:2048
+LLC_WAY:16
+LLC SLICES:1
+LLC_RQ_SIZE:64
+LLC_WQ_SIZE:64
+LLC_PQ_SIZE:32
+LLC_MSHR_SIZE:64
+
+Interconnect OFF
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+PAGE SIZE in KB: 4.000000 
+PAGE SIZE in MB: 0.003906 
+PAGE offset in bits: 12 
+CEASER-S_LLC:1
+CEASER_LATENCY:3
+REMAP : ON
+APLR : 10Partitions : 1
+
+CPU 0 runs /home/prathamesh/Desktop/all_traces//453.povray-887B.champsimtrace.xz
+CPU 0 Bimodal branch predictor
+Initialize SRRIP state
+Heartbeat CPU 0 instructions: 10000002 cycles: 7697340 heartbeat IPC: 1.29915 cumulative IPC: 1.29915 (Simulation time: 0 hr 5 min 11 sec) 
+Heartbeat CPU 0 instructions: 20000001 cycles: 15373233 heartbeat IPC: 1.30278 cumulative IPC: 1.30096 (Simulation time: 0 hr 9 min 15 sec) 
+Heartbeat CPU 0 instructions: 30000000 cycles: 23065222 heartbeat IPC: 1.30005 cumulative IPC: 1.30066 (Simulation time: 0 hr 13 min 18 sec) 
+Heartbeat CPU 0 instructions: 40000001 cycles: 30754468 heartbeat IPC: 1.30052 cumulative IPC: 1.30062 (Simulation time: 0 hr 17 min 44 sec) 
+Heartbeat CPU 0 instructions: 50000003 cycles: 38423977 heartbeat IPC: 1.30386 cumulative IPC: 1.30127 (Simulation time: 0 hr 22 min 11 sec) 
+
+Warmup complete CPU 0 instructions: 50000003 cycles: 38423977 (Simulation time: 0 hr 22 min 11 sec) 
+
+Heartbeat CPU 0 instructions: 60000001 cycles: 64773268 heartbeat IPC: 0.379517 cumulative IPC: 0.379517 (Simulation time: 0 hr 28 min 47 sec) 
+Heartbeat CPU 0 instructions: 70000000 cycles: 91085631 heartbeat IPC: 0.380049 cumulative IPC: 0.379783 (Simulation time: 0 hr 34 min 24 sec) 
+Heartbeat CPU 0 instructions: 80000003 cycles: 117398662 heartbeat IPC: 0.38004 cumulative IPC: 0.379869 (Simulation time: 0 hr 38 min 34 sec) 
+Heartbeat CPU 0 instructions: 90000001 cycles: 144034640 heartbeat IPC: 0.375432 cumulative IPC: 0.37875 (Simulation time: 0 hr 42 min 35 sec) 
+Heartbeat CPU 0 instructions: 100000000 cycles: 171004588 heartbeat IPC: 0.370783 cumulative IPC: 0.377129 (Simulation time: 0 hr 46 min 15 sec) 
+Finished CPU 0 instructions: 50000000 cycles: 132580613 cumulative IPC: 0.377129 (Simulation time: 0 hr 46 min 15 sec) 
+
+CPU 0 Branch Prediction Accuracy: 92.6518% MPKI: 7.18134 Average ROB Occupancy at Mispredict: 101.964
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.377129 instructions: 50000000 cycles: 132580613
+ITLB TOTAL     ACCESS: 8676267  HIT: 8660867  MISS: 15400  HIT %: 99.8225  MISS %: 0.177496  AVERAGE MISS PENALTY: 9
+ITLB LOAD      ACCESS: 8676267  HIT: 8660867  MISS: 15400  HIT %: 99.8225  MISS %: 0.177496  AVERAGE MISS PENALTY: 9
+ITLB RFO       ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+ITLB AVERAGE MISS LATENCY: 9 cycles
+
+DTLB TOTAL     ACCESS: 16860963  HIT: 16701787  MISS: 159176  HIT %: 99.0559  MISS %: 0.94405  AVERAGE MISS PENALTY: 9.02513
+DTLB LOAD      ACCESS: 11247778  HIT: 11103647  MISS: 144131  HIT %: 98.7186  MISS %: 1.28142  AVERAGE MISS PENALTY: 9.01701
+DTLB RFO       ACCESS: 5613185  HIT: 5598140  MISS: 15045  HIT %: 99.732  MISS %: 0.26803  AVERAGE MISS PENALTY: 9.10289
+DTLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+DTLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+DTLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+DTLB AVERAGE MISS LATENCY: 9.02513 cycles
+
+STLB TOTAL     ACCESS: 174576  HIT: 174564  MISS:    12  HIT %: 99.9931  MISS %: 0.0068738  AVERAGE MISS PENALTY: 100
+STLB LOAD      ACCESS: 159531  HIT: 159524  MISS:     7  HIT %: 99.9956  MISS %: 0.00438786  AVERAGE MISS PENALTY: 100
+STLB RFO       ACCESS: 15045  HIT: 15040  MISS:     5  HIT %: 99.9668  MISS %: 0.0332336  AVERAGE MISS PENALTY: 100
+STLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+STLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+STLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+STLB AVERAGE MISS LATENCY: 100 cycles
+
+L1D TOTAL     ACCESS: 18991422  HIT: 18715103  MISS: 276319  HIT %: 98.545  MISS %: 1.45497  AVERAGE MISS PENALTY: 15.2206
+L1D LOAD      ACCESS: 11585891  HIT: 11352807  MISS: 233084  HIT %: 97.9882  MISS %: 2.01179  AVERAGE MISS PENALTY: 15.1931
+L1D RFO       ACCESS: 7405531  HIT: 7362296  MISS: 43235  HIT %: 99.4162  MISS %: 0.58382  AVERAGE MISS PENALTY: 15.3691
+L1D PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1D WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1D PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1D AVERAGE MISS LATENCY: 15.2206 cycles
+
+L1I TOTAL     ACCESS: 10993380  HIT: 10762165  MISS: 231215  HIT %: 97.8968  MISS %: 2.10322  AVERAGE MISS PENALTY: 11.1238
+L1I LOAD      ACCESS: 10993380  HIT: 10762165  MISS: 231215  HIT %: 97.8968  MISS %: 2.10322  AVERAGE MISS PENALTY: 11.1238
+L1I RFO       ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1I AVERAGE MISS LATENCY: 11.1238 cycles
+
+L2C TOTAL     ACCESS: 561284  HIT: 560959  MISS:   325  HIT %: 99.9421  MISS %: 0.057903  AVERAGE MISS PENALTY: 172.898
+L2C LOAD      ACCESS: 464299  HIT: 464063  MISS:   236  HIT %: 99.9492  MISS %: 0.0508293  AVERAGE MISS PENALTY: 174.907
+L2C RFO       ACCESS: 43235  HIT: 43146  MISS:    89  HIT %: 99.7941  MISS %: 0.205852  AVERAGE MISS PENALTY: 167.573
+L2C PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L2C WRITEBACK ACCESS: 53750  HIT: 53750  MISS:     0  HIT %:   100  MISS %:     0  AVERAGE MISS PENALTY: 0
+L2C PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L2C AVERAGE MISS LATENCY: 172.898 cycles
+
+LLC0 TOTAL     ACCESS:   325  HIT:     0  MISS:   325  HIT %:     0  MISS %:   100  AVERAGE MISS PENALTY: 139.025
+LLC0 LOAD      ACCESS:   236  HIT:     0  MISS:   236  HIT %:     0  MISS %:   100  AVERAGE MISS PENALTY: 141.708
+LLC0 RFO       ACCESS:    89  HIT:     0  MISS:    89  HIT %:     0  MISS %:   100  AVERAGE MISS PENALTY: 131.91
+LLC0 PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+LLC0 WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+LLC0 PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+LLC0 AVERAGE MISS LATENCY: 139.025 cycles
+
+ROI Average ROB Stall Cycles:	7.2537
+ROI Total ROB Stalls Cycles:	119536319
+ROI TOTAL ROB counter      :	16479358
+ROI Average Load ROB Stall Cycles:	7.83806
+ROI Total Load ROB Stalls Cycle  :	20376100
+ROI Total Load ROB stalls Counter:	2599636
+Major fault: 0 Minor fault: 181
+Interconnect Stats 
+LINK 0 BW : 0
+total_times_rrpv_increased: 0
+total_remap_impact: 0
+4196304: 0 1 pc_bias_hit: 100
+4196356: 1 1 pc_bias_eviction: 100
+4198159: 0 1 pc_bias_hit: 100
+4198592: 0 2 pc_bias_hit: 100
+4200976: 0 1 pc_bias_hit: 100
+4200983: 0 3 pc_bias_hit: 100
+4200998: 0 1 pc_bias_hit: 100
+4201024: 0 1 pc_bias_hit: 100
+4201088: 0 1 pc_bias_hit: 100
+4201159: 1 1 pc_bias_eviction: 100
+4201904: 0 1 pc_bias_hit: 100
+4201921: 0 1 pc_bias_hit: 100
+4201984: 1 1 pc_bias_eviction: 100
+4202052: 1 1 pc_bias_eviction: 100
+4202168: 0 1 pc_bias_hit: 100
+4202208: 0 1 pc_bias_hit: 100
+4202213: 0 1 pc_bias_hit: 100
+4202222: 5 12 pc_bias_hit: 58.3333
+4202240: 0 1 pc_bias_hit: 100
+4202294: 2 2 pc_bias_eviction: 100
+4202320: 1 1 pc_bias_eviction: 100
+4202389: 1 1 pc_bias_eviction: 100
+4202453: 1 1 pc_bias_eviction: 100
+4202497: 1 1 pc_bias_eviction: 100
+4202560: 1 1 pc_bias_eviction: 100
+4202640: 0 2 pc_bias_hit: 100
+4202691: 2 8 pc_bias_hit: 75
+4202776: 0 1 pc_bias_hit: 100
+4202816: 0 1 pc_bias_hit: 100
+4203080: 0 1 pc_bias_hit: 100
+4203188: 1 1 pc_bias_eviction: 100
+4203256: 1 1 pc_bias_eviction: 100
+4203296: 1 1 pc_bias_eviction: 100
+4203298: 0 1 pc_bias_hit: 100
+4203319: 1 1 pc_bias_eviction: 100
+4203332: 1 1 pc_bias_eviction: 100
+4203337: 1 1 pc_bias_eviction: 100
+4203378: 0 1 pc_bias_hit: 100
+4203394: 0 1 pc_bias_hit: 100
+4203400: 0 1 pc_bias_hit: 100
+4203413: 0 1 pc_bias_hit: 100
+4203457: 1 1 pc_bias_eviction: 100
+4203520: 0 1 pc_bias_hit: 100
+4203537: 1 3 pc_bias_hit: 66.6667
+4203616: 1 1 pc_bias_eviction: 100
+4203657: 1 1 pc_bias_eviction: 100
+4203711: 1 1 pc_bias_eviction: 100
+4203752: 6 7 pc_bias_eviction: 85.7143
+4203756: 6 10 pc_bias_eviction: 60
+4203777: 0 1 pc_bias_hit: 100
+4226176: 0 1 pc_bias_hit: 100
+4253952: 1 2 pc_bias_hit: 50
+4254019: 1 1 pc_bias_eviction: 100
+4254080: 1 1 pc_bias_eviction: 100
+4254146: 0 1 pc_bias_hit: 100
+4261472: 1 1 pc_bias_eviction: 100
+4261481: 1 1 pc_bias_eviction: 100
+4261496: 1 2 pc_bias_hit: 50
+4261558: 0 2 pc_bias_hit: 100
+4261559: 1 1 pc_bias_eviction: 100
+4261824: 1 1 pc_bias_eviction: 100
+4261833: 0 1 pc_bias_hit: 100
+4261836: 1 1 pc_bias_eviction: 100
+4261841: 1 1 pc_bias_eviction: 100
+4261858: 1 1 pc_bias_eviction: 100
+4261863: 2 4 pc_bias_hit: 50
+4261910: 43 76 pc_bias_eviction: 56.5789
+4261929: 34 55 pc_bias_eviction: 61.8182
+4261944: 1 1 pc_bias_eviction: 100
+4261952: 0 1 pc_bias_hit: 100
+4262016: 0 1 pc_bias_hit: 100
+4262021: 9 12 pc_bias_eviction: 75
+4262088: 1 1 pc_bias_eviction: 100
+4262123: 3 4 pc_bias_eviction: 75
+4262147: 0 1 pc_bias_hit: 100
+4404176: 1 1 pc_bias_eviction: 100
+4404214: 1 1 pc_bias_eviction: 100
+4404225: 1 1 pc_bias_eviction: 100
+4404291: 0 1 pc_bias_hit: 100
+4404313: 1 1 pc_bias_eviction: 100
+4434992: 1 1 pc_bias_eviction: 100
+4435009: 0 1 pc_bias_hit: 100
+4435024: 0 2 pc_bias_hit: 100
+4435048: 1 1 pc_bias_eviction: 100
+4435055: 1 2 pc_bias_hit: 50
+4435075: 0 2 pc_bias_hit: 100
+4435096: 0 1 pc_bias_hit: 100
+4435107: 0 1 pc_bias_hit: 100
+4435112: 1 1 pc_bias_eviction: 100
+4435120: 0 1 pc_bias_hit: 100
+4435136: 1 1 pc_bias_eviction: 100
+4435168: 1 6 pc_bias_hit: 83.3333
+4435178: 1 2 pc_bias_hit: 50
+4435203: 1 1 pc_bias_eviction: 100
+4435211: 5 5 pc_bias_eviction: 100
+4435223: 7 21 pc_bias_hit: 66.6667
+4435270: 1 1 pc_bias_eviction: 100
+4435281: 1 1 pc_bias_eviction: 100
+4435332: 1 1 pc_bias_eviction: 100
+4435393: 1 1 pc_bias_eviction: 100
+4435566: 1 1 pc_bias_eviction: 100
+4435586: 0 1 pc_bias_hit: 100
+4435622: 0 1 pc_bias_hit: 100
+4443248: 0 1 pc_bias_hit: 100
+4443269: 1 1 pc_bias_eviction: 100
+4443360: 1 1 pc_bias_eviction: 100
+4443364: 0 1 pc_bias_hit: 100
+4443376: 1 1 pc_bias_eviction: 100
+4443392: 1 1 pc_bias_eviction: 100
+4443404: 1 2 pc_bias_hit: 50
+4443472: 1 1 pc_bias_eviction: 100
+4448352: 0 1 pc_bias_hit: 100
+4448386: 0 1 pc_bias_hit: 100
+4448453: 0 1 pc_bias_hit: 100
+4448539: 1 1 pc_bias_eviction: 100
+4448577: 0 1 pc_bias_hit: 100
+4448642: 1 1 pc_bias_eviction: 100
+4448704: 0 1 pc_bias_hit: 100
+4449200: 0 1 pc_bias_hit: 100
+4449217: 0 1 pc_bias_hit: 100
+4449336: 0 1 pc_bias_hit: 100
+4449344: 0 1 pc_bias_hit: 100
+4449364: 1 2 pc_bias_hit: 50
+4449384: 2 2 pc_bias_eviction: 100
+4449424: 1 1 pc_bias_eviction: 100
+4449920: 0 1 pc_bias_hit: 100
+4449984: 1 1 pc_bias_eviction: 100
+4450050: 1 1 pc_bias_eviction: 100
+4450112: 1 1 pc_bias_eviction: 100
+4450176: 1 1 pc_bias_eviction: 100
+4450244: 0 1 pc_bias_hit: 100
+4450896: 1 1 pc_bias_eviction: 100
+4450940: 1 3 pc_bias_hit: 66.6667
+4450946: 0 1 pc_bias_hit: 100
+4451952: 0 1 pc_bias_hit: 100
+4451970: 0 1 pc_bias_hit: 100
+4452033: 1 1 pc_bias_eviction: 100
+4452099: 0 1 pc_bias_hit: 100
+4452162: 1 1 pc_bias_eviction: 100
+4452519: 1 1 pc_bias_eviction: 100
+4452592: 0 1 pc_bias_hit: 100
+4452612: 1 1 pc_bias_eviction: 100
+4452677: 0 1 pc_bias_hit: 100
+4452736: 0 1 pc_bias_hit: 100
+4452801: 0 1 pc_bias_hit: 100
+4452866: 1 1 pc_bias_eviction: 100
+4452930: 0 1 pc_bias_hit: 100
+4452995: 0 1 pc_bias_hit: 100
+4453058: 0 1 pc_bias_hit: 100
+4453120: 0 1 pc_bias_hit: 100
+4453200: 0 1 pc_bias_hit: 100
+4453255: 0 1 pc_bias_hit: 100
+4462560: 0 1 pc_bias_hit: 100
+4462575: 1 1 pc_bias_eviction: 100
+4462587: 0 1 pc_bias_hit: 100
+4462593: 0 1 pc_bias_hit: 100
+4462626: 1 1 pc_bias_eviction: 100
+4462639: 0 1 pc_bias_hit: 100
+4462655: 0 1 pc_bias_hit: 100
+4462659: 1 2 pc_bias_hit: 50
+4462725: 1 1 pc_bias_eviction: 100
+4462764: 0 1 pc_bias_hit: 100
+4462788: 1 1 pc_bias_eviction: 100
+4462991: 0 1 pc_bias_hit: 100
+4463045: 0 1 pc_bias_hit: 100
+4470304: 0 1 pc_bias_hit: 100
+4470340: 1 1 pc_bias_eviction: 100
+4470381: 12 35 pc_bias_hit: 65.7143
+4470402: 1 1 pc_bias_eviction: 100
+4470417: 1 1 pc_bias_eviction: 100
+4470503: 0 1 pc_bias_hit: 100
+4470533: 0 1 pc_bias_hit: 100
+4470736: 0 1 pc_bias_hit: 100
+4470928: 1 1 pc_bias_eviction: 100
+4470934: 0 2 pc_bias_hit: 100
+4470978: 1 2 pc_bias_hit: 50
+4471045: 1 1 pc_bias_eviction: 100
+4471103: 0 1 pc_bias_hit: 100
+4471111: 1 1 pc_bias_eviction: 100
+4471170: 1 1 pc_bias_eviction: 100
+4471492: 1 1 pc_bias_eviction: 100
+4471536: 0 2 pc_bias_hit: 100
+4471552: 1 3 pc_bias_hit: 66.6667
+4471684: 0 1 pc_bias_hit: 100
+4471696: 0 2 pc_bias_hit: 100
+4471771: 1 1 pc_bias_eviction: 100
+4471789: 0 1 pc_bias_hit: 100
+4472384: 0 1 pc_bias_hit: 100
+4472451: 1 1 pc_bias_eviction: 100
+4472514: 0 1 pc_bias_hit: 100
+4472576: 1 1 pc_bias_eviction: 100
+4472642: 0 1 pc_bias_hit: 100
+4472657: 0 1 pc_bias_hit: 100
+4472705: 0 1 pc_bias_hit: 100
+4472784: 1 1 pc_bias_eviction: 100
+4472839: 0 1 pc_bias_hit: 100
+4472879: 0 1 pc_bias_hit: 100
+4472897: 1 1 pc_bias_eviction: 100
+4472966: 1 1 pc_bias_eviction: 100
+4473056: 2 2 pc_bias_eviction: 100
+4473088: 1 1 pc_bias_eviction: 100
+4473155: 0 1 pc_bias_hit: 100
+4473275: 0 1 pc_bias_hit: 100
+4473280: 1 1 pc_bias_eviction: 100
+4473407: 0 1 pc_bias_hit: 100
+4473448: 0 1 pc_bias_hit: 100
+4473472: 0 1 pc_bias_hit: 100
+4473492: 1 1 pc_bias_eviction: 100
+4473508: 0 1 pc_bias_hit: 100
+4473541: 2 3 pc_bias_eviction: 66.6667
+4473546: 1 2 pc_bias_hit: 50
+4473580: 0 1 pc_bias_hit: 100
+4473603: 0 1 pc_bias_hit: 100
+4473669: 0 1 pc_bias_hit: 100
+4473676: 1 1 pc_bias_eviction: 100
+4473683: 0 1 pc_bias_hit: 100
+4473738: 2 2 pc_bias_eviction: 100
+4473793: 1 1 pc_bias_eviction: 100
+4473801: 0 1 pc_bias_hit: 100
+4473857: 1 1 pc_bias_eviction: 100
+4473920: 1 1 pc_bias_eviction: 100
+4473945: 1 1 pc_bias_eviction: 100
+4473958: 0 1 pc_bias_hit: 100
+4473983: 0 1 pc_bias_hit: 100
+4473992: 1 1 pc_bias_eviction: 100
+4474048: 1 1 pc_bias_eviction: 100
+4474072: 1 1 pc_bias_eviction: 100
+4474082: 0 1 pc_bias_hit: 100
+4474112: 1 1 pc_bias_eviction: 100
+4474126: 0 3 pc_bias_hit: 100
+4474363: 0 1 pc_bias_hit: 100
+4474370: 1 1 pc_bias_eviction: 100
+4474382: 0 1 pc_bias_hit: 100
+4474438: 1 1 pc_bias_eviction: 100
+4474502: 0 1 pc_bias_hit: 100
+4474587: 0 1 pc_bias_hit: 100
+4474624: 1 1 pc_bias_eviction: 100
+4474689: 0 1 pc_bias_hit: 100
+4475023: 1 1 pc_bias_eviction: 100
+4475076: 0 1 pc_bias_hit: 100
+4475138: 1 1 pc_bias_eviction: 100
+4475199: 0 1 pc_bias_hit: 100
+4475203: 1 1 pc_bias_eviction: 100
+4475265: 0 1 pc_bias_hit: 100
+4475329: 1 1 pc_bias_eviction: 100
+4475393: 0 1 pc_bias_hit: 100
+4475505: 0 1 pc_bias_hit: 100
+4475632: 1 1 pc_bias_eviction: 100
+4475648: 1 1 pc_bias_eviction: 100
+4475718: 0 1 pc_bias_hit: 100
+4475779: 0 1 pc_bias_hit: 100
+4476178: 1 1 pc_bias_eviction: 100
+4476462: 1 1 pc_bias_eviction: 100
+4476496: 1 1 pc_bias_eviction: 100
+4476536: 1 4 pc_bias_hit: 75
+4476539: 0 2 pc_bias_hit: 100
+4476546: 1 1 pc_bias_eviction: 100
+4476606: 0 2 pc_bias_hit: 100
+4476613: 0 1 pc_bias_hit: 100
+4476633: 1 1 pc_bias_eviction: 100
+4476676: 0 1 pc_bias_hit: 100
+4476736: 1 1 pc_bias_eviction: 100
+4476743: 1 3 pc_bias_hit: 66.6667
+4476776: 0 1 pc_bias_hit: 100
+4476782: 0 1 pc_bias_hit: 100
+4476801: 0 1 pc_bias_hit: 100
+4476867: 0 1 pc_bias_hit: 100
+4476936: 0 1 pc_bias_hit: 100
+4476995: 1 1 pc_bias_eviction: 100
+4477392: 0 1 pc_bias_hit: 100
+4477446: 0 1 pc_bias_hit: 100
+4477507: 0 1 pc_bias_hit: 100
+4477546: 0 1 pc_bias_hit: 100
+4477569: 1 1 pc_bias_eviction: 100
+4477632: 0 1 pc_bias_hit: 100
+4477696: 0 1 pc_bias_hit: 100
+4477762: 1 1 pc_bias_eviction: 100
+4477832: 0 1 pc_bias_hit: 100
+4477889: 1 1 pc_bias_eviction: 100
+4477901: 1 3 pc_bias_hit: 66.6667
+4477952: 0 1 pc_bias_hit: 100
+4478017: 1 1 pc_bias_eviction: 100
+4478081: 1 1 pc_bias_eviction: 100
+4478101: 0 1 pc_bias_hit: 100
+4478251: 0 1 pc_bias_hit: 100
+4478277: 0 1 pc_bias_hit: 100
+4478340: 0 1 pc_bias_hit: 100
+4478403: 0 1 pc_bias_hit: 100
+4481392: 0 1 pc_bias_hit: 100
+4481414: 1 1 pc_bias_eviction: 100
+4481473: 0 1 pc_bias_hit: 100
+4481536: 1 1 pc_bias_eviction: 100
+4481603: 0 1 pc_bias_hit: 100
+4485344: 0 1 pc_bias_hit: 100
+4485383: 0 1 pc_bias_hit: 100
+4485399: 0 2 pc_bias_hit: 100
+4485425: 1 1 pc_bias_eviction: 100
+4485440: 0 3 pc_bias_hit: 100
+4485505: 1 1 pc_bias_eviction: 100
+4485919: 0 1 pc_bias_hit: 100
+4486448: 1 1 pc_bias_eviction: 100
+4486464: 1 1 pc_bias_eviction: 100
+4489160: 1 1 pc_bias_eviction: 100
+4492832: 1 1 pc_bias_eviction: 100
+4492858: 0 1 pc_bias_hit: 100
+4492865: 1 1 pc_bias_eviction: 100
+4492871: 1 1 pc_bias_eviction: 100
+4492929: 1 2 pc_bias_hit: 50
+4492945: 1 1 pc_bias_eviction: 100
+4492952: 0 1 pc_bias_hit: 100
+4492994: 1 3 pc_bias_hit: 66.6667
+4493057: 1 1 pc_bias_eviction: 100
+4493105: 1 1 pc_bias_eviction: 100
+4493161: 1 1 pc_bias_eviction: 100
+4493186: 0 1 pc_bias_hit: 100
+4493222: 1 1 pc_bias_eviction: 100
+4493240: 1 1 pc_bias_eviction: 100
+4493251: 1 1 pc_bias_eviction: 100
+4493312: 1 1 pc_bias_eviction: 100
+4493467: 1 1 pc_bias_eviction: 100
+4493506: 1 1 pc_bias_eviction: 100
+4493569: 1 1 pc_bias_eviction: 100
+4493635: 1 1 pc_bias_eviction: 100
+4493700: 0 1 pc_bias_hit: 100
+4493763: 1 1 pc_bias_eviction: 100
+4493826: 1 1 pc_bias_eviction: 100
+4493889: 1 1 pc_bias_eviction: 100
+4497312: 1 1 pc_bias_eviction: 100
+4497341: 2 4 pc_bias_hit: 50
+4497350: 2 3 pc_bias_eviction: 66.6667
+4497367: 0 3 pc_bias_hit: 100
+4497380: 1 3 pc_bias_hit: 66.6667
+4497389: 1 2 pc_bias_hit: 50
+4497409: 2 3 pc_bias_eviction: 66.6667
+4497552: 0 1 pc_bias_hit: 100
+4497603: 0 1 pc_bias_hit: 100
+4497648: 0 1 pc_bias_hit: 100
+4515056: 0 1 pc_bias_hit: 100
+4515076: 0 1 pc_bias_hit: 100
+4515093: 0 1 pc_bias_hit: 100
+4515100: 1 1 pc_bias_eviction: 100
+4515142: 0 1 pc_bias_hit: 100
+4515925: 0 1 pc_bias_hit: 100
+4554656: 1 1 pc_bias_eviction: 100
+4554666: 3 10 pc_bias_hit: 70
+4554712: 1 1 pc_bias_eviction: 100
+4554722: 1 2 pc_bias_hit: 50
+4554740: 0 1 pc_bias_hit: 100
+4554816: 1 1 pc_bias_eviction: 100
+4554896: 0 1 pc_bias_hit: 100
+4554944: 1 2 pc_bias_hit: 50
+4554962: 3 4 pc_bias_eviction: 75
+4554972: 1 2 pc_bias_hit: 50
+4555136: 0 1 pc_bias_hit: 100
+4555154: 0 1 pc_bias_hit: 100
+4555174: 3 11 pc_bias_hit: 72.7273
+4555224: 0 1 pc_bias_hit: 100
+4555232: 4 7 pc_bias_eviction: 57.1429
+4555251: 0 1 pc_bias_hit: 100
+4555312: 1 1 pc_bias_eviction: 100
+4555329: 0 1 pc_bias_hit: 100
+4555389: 0 1 pc_bias_hit: 100
+4555408: 1 1 pc_bias_eviction: 100
+4555410: 2 3 pc_bias_eviction: 66.6667
+4555520: 1 1 pc_bias_eviction: 100
+4660672: 0 4 pc_bias_hit: 100
+4660693: 2 2 pc_bias_eviction: 100
+4660727: 0 1 pc_bias_hit: 100
+4660736: 3 4 pc_bias_eviction: 75
+4660759: 2 3 pc_bias_eviction: 66.6667
+4676288: 1 1 pc_bias_eviction: 100
+4676384: 0 1 pc_bias_hit: 100
+4676390: 0 1 pc_bias_hit: 100
+4676428: 0 1 pc_bias_hit: 100
+4676480: 1 1 pc_bias_eviction: 100
+4676544: 1 1 pc_bias_eviction: 100
+4676547: 0 2 pc_bias_hit: 100
+4676563: 0 2 pc_bias_hit: 100
+4676579: 0 1 pc_bias_hit: 100
+4676607: 1 1 pc_bias_eviction: 100
+4676613: 1 1 pc_bias_eviction: 100
+4676628: 1 1 pc_bias_eviction: 100
+4676864: 0 1 pc_bias_hit: 100
+4678608: 1 1 pc_bias_eviction: 100
+4678661: 0 1 pc_bias_hit: 100
+4678720: 0 1 pc_bias_hit: 100
+4678791: 0 1 pc_bias_hit: 100
+4678853: 1 1 pc_bias_eviction: 100
+4678921: 0 1 pc_bias_hit: 100
+4678977: 0 1 pc_bias_hit: 100
+4679272: 1 1 pc_bias_eviction: 100
+4679297: 1 1 pc_bias_eviction: 100
+4679372: 1 1 pc_bias_eviction: 100
+4679427: 0 1 pc_bias_hit: 100
+4680840: 1 1 pc_bias_eviction: 100
+4680846: 1 2 pc_bias_hit: 50
+4680859: 0 2 pc_bias_hit: 100
+4684369: 1 1 pc_bias_eviction: 100
+4684419: 0 1 pc_bias_hit: 100
+4684484: 1 1 pc_bias_eviction: 100
+4707136: 1 1 pc_bias_eviction: 100
+4707162: 1 1 pc_bias_eviction: 100
+4707179: 2 3 pc_bias_eviction: 66.6667
+4707189: 1 2 pc_bias_hit: 50
+4707194: 2 2 pc_bias_eviction: 100
+4707201: 1 1 pc_bias_eviction: 100
+4707230: 1 2 pc_bias_hit: 50
+4707270: 0 1 pc_bias_hit: 100
+4707343: 0 1 pc_bias_hit: 100
+4707395: 1 1 pc_bias_eviction: 100
+4707456: 0 1 pc_bias_hit: 100
+4707521: 1 1 pc_bias_eviction: 100
+4707586: 1 1 pc_bias_eviction: 100
+4707648: 1 1 pc_bias_eviction: 100
+4707714: 1 1 pc_bias_eviction: 100
+4707816: 0 1 pc_bias_hit: 100
+4707832: 1 1 pc_bias_eviction: 100
+4707844: 0 1 pc_bias_hit: 100
+4710640: 0 1 pc_bias_hit: 100
+4710658: 1 1 pc_bias_eviction: 100
+4710776: 0 1 pc_bias_hit: 100
+4710784: 0 1 pc_bias_hit: 100
+4710795: 5 7 pc_bias_eviction: 71.4286
+4710861: 2 2 pc_bias_eviction: 100
+4710869: 1 1 pc_bias_eviction: 100
+4710896: 1 1 pc_bias_eviction: 100
+4710905: 1 3 pc_bias_hit: 66.6667
+4710910: 1 4 pc_bias_hit: 75
+4710918: 1 1 pc_bias_eviction: 100
+4710961: 1 1 pc_bias_eviction: 100
+4710969: 13 18 pc_bias_eviction: 72.2222
+4710976: 0 1 pc_bias_hit: 100
+4711123: 1 1 pc_bias_eviction: 100
+4711135: 4 5 pc_bias_eviction: 80
+4711151: 1 1 pc_bias_eviction: 100
+4711161: 0 1 pc_bias_hit: 100
+4711200: 3 4 pc_bias_eviction: 75
+4711205: 3 6 pc_bias_hit: 50
+4711234: 1 1 pc_bias_eviction: 100
+4711256: 1 1 pc_bias_eviction: 100
+4711299: 1 1 pc_bias_eviction: 100
+4711360: 1 1 pc_bias_eviction: 100
+4711395: 0 2 pc_bias_hit: 100
+4711400: 0 1 pc_bias_hit: 100
+4711428: 1 1 pc_bias_eviction: 100
+4711439: 1 3 pc_bias_hit: 66.6667
+4711462: 3 3 pc_bias_eviction: 100
+4711489: 1 1 pc_bias_eviction: 100
+4711556: 1 1 pc_bias_eviction: 100
+4711564: 3 3 pc_bias_eviction: 100
+4712912: 1 1 pc_bias_eviction: 100
+4712960: 1 1 pc_bias_eviction: 100
+4713024: 0 1 pc_bias_hit: 100
+4741120: 0 1 pc_bias_hit: 100
+4741147: 0 1 pc_bias_hit: 100
+4741184: 1 1 pc_bias_eviction: 100
+4741248: 0 1 pc_bias_hit: 100
+4749888: 1 1 pc_bias_eviction: 100
+4749992: 1 1 pc_bias_eviction: 100
+4750023: 0 1 pc_bias_hit: 100
+4750071: 0 1 pc_bias_hit: 100
+4750083: 0 1 pc_bias_hit: 100
+4750752: 0 1 pc_bias_hit: 100
+4779040: 0 1 pc_bias_hit: 100
+4779099: 1 1 pc_bias_eviction: 100
+4813120: 1 1 pc_bias_eviction: 100
+4813144: 0 1 pc_bias_hit: 100
+4813161: 0 2 pc_bias_hit: 100
+4813185: 0 1 pc_bias_hit: 100
+4813201: 2 4 pc_bias_hit: 50
+4813209: 1 1 pc_bias_eviction: 100
+4813249: 0 1 pc_bias_hit: 100
+4814400: 1 1 pc_bias_eviction: 100
+4814411: 0 1 pc_bias_hit: 100
+4814422: 1 1 pc_bias_eviction: 100
+4814430: 0 1 pc_bias_hit: 100
+4814465: 1 1 pc_bias_eviction: 100
+4814488: 1 1 pc_bias_eviction: 100
+4814535: 0 1 pc_bias_hit: 100
+4814595: 1 1 pc_bias_eviction: 100
+4814617: 1 1 pc_bias_eviction: 100
+4814658: 1 1 pc_bias_eviction: 100
+4814684: 0 1 pc_bias_hit: 100
+4814722: 0 1 pc_bias_hit: 100
+4814791: 0 1 pc_bias_hit: 100
+4814852: 1 1 pc_bias_eviction: 100
+4814915: 1 1 pc_bias_eviction: 100
+4815006: 1 1 pc_bias_eviction: 100
+4815045: 1 1 pc_bias_eviction: 100
+4815108: 0 1 pc_bias_hit: 100
+4815200: 0 1 pc_bias_hit: 100
+4815272: 0 1 pc_bias_hit: 100
+4815299: 1 1 pc_bias_eviction: 100
+4815364: 0 1 pc_bias_hit: 100
+4815425: 1 1 pc_bias_eviction: 100
+4838512: 0 1 pc_bias_hit: 100
+4838736: 1 1 pc_bias_eviction: 100
+4838798: 0 1 pc_bias_hit: 100
+4845168: 1 1 pc_bias_eviction: 100
+4845186: 1 1 pc_bias_eviction: 100
+4845195: 0 1 pc_bias_hit: 100
+4845199: 6 9 pc_bias_eviction: 66.6667
+4845248: 0 1 pc_bias_hit: 100
+4845336: 1 1 pc_bias_eviction: 100
+4845347: 2 3 pc_bias_eviction: 66.6667
+4845360: 2 3 pc_bias_eviction: 66.6667
+4845376: 0 1 pc_bias_hit: 100
+4845381: 0 1 pc_bias_hit: 100
+4845401: 1 1 pc_bias_eviction: 100
+4845405: 0 1 pc_bias_hit: 100
+4845411: 1 1 pc_bias_eviction: 100
+4845414: 0 1 pc_bias_hit: 100
+4845488: 1 1 pc_bias_eviction: 100
+4845505: 1 1 pc_bias_eviction: 100
+4845639: 1 2 pc_bias_hit: 50
+4845677: 1 1 pc_bias_eviction: 100
+4845759: 0 1 pc_bias_hit: 100
+4845794: 0 1 pc_bias_hit: 100
+4845826: 1 1 pc_bias_eviction: 100
+4845862: 0 1 pc_bias_hit: 100
+4845867: 1 1 pc_bias_eviction: 100
+4845887: 1 1 pc_bias_eviction: 100
+4845890: 0 1 pc_bias_hit: 100
+4845908: 0 1 pc_bias_hit: 100
+4845956: 0 1 pc_bias_hit: 100
+4846040: 1 1 pc_bias_eviction: 100
+4846054: 1 1 pc_bias_eviction: 100
+4846071: 1 1 pc_bias_eviction: 100
+4846083: 1 2 pc_bias_hit: 50
+4846288: 1 2 pc_bias_hit: 50
+4846342: 1 2 pc_bias_hit: 50
+4846419: 1 1 pc_bias_eviction: 100
+4846467: 0 1 pc_bias_hit: 100
+4846768: 1 1 pc_bias_eviction: 100
+4846784: 0 1 pc_bias_hit: 100
+4847312: 0 1 pc_bias_hit: 100
+4847352: 0 1 pc_bias_hit: 100
+4847361: 0 1 pc_bias_hit: 100
+4847385: 1 1 pc_bias_eviction: 100
+4847424: 0 1 pc_bias_hit: 100
+4847494: 1 1 pc_bias_eviction: 100
+4847502: 1 1 pc_bias_eviction: 100
+4847557: 0 1 pc_bias_hit: 100
+4847567: 2 5 pc_bias_hit: 60
+4847617: 1 1 pc_bias_eviction: 100
+4847680: 0 1 pc_bias_hit: 100
+4847733: 0 1 pc_bias_hit: 100
+4847745: 0 1 pc_bias_hit: 100
+4847840: 1 1 pc_bias_eviction: 100
+4847873: 0 1 pc_bias_hit: 100
+4847936: 1 1 pc_bias_eviction: 100
+4847939: 0 1 pc_bias_hit: 100
+4847954: 0 1 pc_bias_hit: 100
+4848040: 1 2 pc_bias_hit: 50
+4848047: 0 1 pc_bias_hit: 100
+4848230: 1 1 pc_bias_eviction: 100
+4848258: 1 1 pc_bias_eviction: 100
+4848323: 0 1 pc_bias_hit: 100
+4848330: 1 1 pc_bias_eviction: 100
+4848331: 1 1 pc_bias_eviction: 100
+4848351: 0 1 pc_bias_hit: 100
+4848704: 1 1 pc_bias_eviction: 100
+4848761: 0 1 pc_bias_hit: 100
+4848770: 0 1 pc_bias_hit: 100
+4848872: 0 2 pc_bias_hit: 100
+4848880: 1 1 pc_bias_eviction: 100
+4853680: 0 1 pc_bias_hit: 100
+4853696: 1 1 pc_bias_eviction: 100
+4853808: 0 2 pc_bias_hit: 100
+4853824: 0 1 pc_bias_hit: 100
+4853829: 0 1 pc_bias_hit: 100
+4853896: 0 1 pc_bias_hit: 100
+4853906: 1 1 pc_bias_eviction: 100
+4853956: 1 1 pc_bias_eviction: 100
+4854020: 0 1 pc_bias_hit: 100
+4854071: 0 1 pc_bias_hit: 100
+4854085: 0 1 pc_bias_hit: 100
+4854099: 0 1 pc_bias_hit: 100
+4854145: 1 1 pc_bias_eviction: 100
+4854208: 0 1 pc_bias_hit: 100
+4854298: 0 1 pc_bias_hit: 100
+4854322: 0 1 pc_bias_hit: 100
+4854330: 0 1 pc_bias_hit: 100
+4854340: 0 1 pc_bias_hit: 100
+4854400: 0 1 pc_bias_hit: 100
+4854416: 0 3 pc_bias_hit: 100
+4854466: 1 1 pc_bias_eviction: 100
+4854530: 0 1 pc_bias_hit: 100
+4854640: 0 1 pc_bias_hit: 100
+4854661: 0 1 pc_bias_hit: 100
+4854692: 0 1 pc_bias_hit: 100
+4854720: 1 1 pc_bias_eviction: 100
+4854834: 1 1 pc_bias_eviction: 100
+4854850: 1 1 pc_bias_eviction: 100
+4854852: 4 11 pc_bias_hit: 63.6364
+4854857: 0 10 pc_bias_hit: 100
+4854862: 1 11 pc_bias_hit: 90.9091
+4854867: 3 10 pc_bias_hit: 70
+4854872: 1 10 pc_bias_hit: 90
+4854903: 0 1 pc_bias_hit: 100
+4854912: 0 1 pc_bias_hit: 100
+4862507: 0 1 pc_bias_hit: 100
+4862608: 0 1 pc_bias_hit: 100
+4867360: 0 1 pc_bias_hit: 100
+4867392: 1 1 pc_bias_eviction: 100
+4867441: 0 1 pc_bias_hit: 100
+4867459: 0 1 pc_bias_hit: 100
+4868752: 0 1 pc_bias_hit: 100
+4868904: 1 1 pc_bias_eviction: 100
+4868976: 0 1 pc_bias_hit: 100
+4868993: 0 1 pc_bias_hit: 100
+4869058: 0 1 pc_bias_hit: 100
+4878992: 1 2 pc_bias_hit: 50
+4879041: 1 1 pc_bias_eviction: 100
+4879064: 0 1 pc_bias_hit: 100
+4879408: 0 1 pc_bias_hit: 100
+4879425: 0 1 pc_bias_hit: 100
+4879490: 0 1 pc_bias_hit: 100
+4880016: 0 1 pc_bias_hit: 100
+4880024: 1 1 pc_bias_eviction: 100
+4880040: 15 24 pc_bias_eviction: 62.5
+4880068: 1 1 pc_bias_eviction: 100
+4880131: 0 1 pc_bias_hit: 100
+4880192: 1 1 pc_bias_eviction: 100
+4880304: 0 2 pc_bias_hit: 100
+4880322: 0 1 pc_bias_hit: 100
+4880342: 1 1 pc_bias_eviction: 100
+4880356: 0 2 pc_bias_hit: 100
+4880386: 0 1 pc_bias_hit: 100
+4880449: 1 1 pc_bias_eviction: 100
+4880507: 1 1 pc_bias_eviction: 100
+4880515: 1 1 pc_bias_eviction: 100
+4880592: 1 1 pc_bias_eviction: 100
+4880992: 1 1 pc_bias_eviction: 100
+4881019: 31 49 pc_bias_eviction: 63.2653
+4881027: 1 1 pc_bias_eviction: 100
+4881056: 1 1 pc_bias_eviction: 100
+4881120: 0 1 pc_bias_hit: 100
+4881152: 0 1 pc_bias_hit: 100
+4881217: 0 1 pc_bias_hit: 100
+4881281: 0 1 pc_bias_hit: 100
+4881347: 0 1 pc_bias_hit: 100
+4881409: 0 1 pc_bias_hit: 100
+4925888: 0 1 pc_bias_hit: 100
+4925952: 0 1 pc_bias_hit: 100
+4926021: 0 1 pc_bias_hit: 100
+4926032: 1 6 pc_bias_hit: 83.3333
+4926081: 1 1 pc_bias_eviction: 100
+4926088: 10 29 pc_bias_hit: 65.5172
+4926144: 0 1 pc_bias_hit: 100
+4926171: 0 3 pc_bias_hit: 100
+4926211: 1 1 pc_bias_eviction: 100
+4926228: 1 5 pc_bias_hit: 80
+4926243: 3 21 pc_bias_hit: 85.7143
+4926275: 0 1 pc_bias_hit: 100
+4926303: 7 9 pc_bias_eviction: 77.7778
+4926337: 0 1 pc_bias_hit: 100
+4926342: 0 1 pc_bias_hit: 100
+4926361: 1 2 pc_bias_hit: 50
+4926401: 0 1 pc_bias_hit: 100
+4926406: 6 10 pc_bias_eviction: 60
+4926429: 0 1 pc_bias_hit: 100
+4926458: 2 10 pc_bias_hit: 80
+4926463: 1 1 pc_bias_eviction: 100
+4926468: 1 1 pc_bias_eviction: 100
+4926481: 0 1 pc_bias_hit: 100
+4926526: 0 6 pc_bias_hit: 100
+4926534: 0 1 pc_bias_hit: 100
+4926550: 3 7 pc_bias_hit: 57.1429
+4926559: 0 1 pc_bias_hit: 100
+4926564: 0 2 pc_bias_hit: 100
+4926577: 0 2 pc_bias_hit: 100
+4926595: 1 1 pc_bias_eviction: 100
+4926660: 1 1 pc_bias_eviction: 100
+4926670: 0 1 pc_bias_hit: 100
+4926721: 0 1 pc_bias_hit: 100
+4926766: 1 1 pc_bias_eviction: 100
+4926785: 0 1 pc_bias_hit: 100
+4926851: 1 1 pc_bias_eviction: 100
+4926884: 0 1 pc_bias_hit: 100
+4926912: 1 1 pc_bias_eviction: 100
+4926981: 1 1 pc_bias_eviction: 100
+4927042: 1 1 pc_bias_eviction: 100
+4927105: 1 1 pc_bias_eviction: 100
+4927168: 0 1 pc_bias_hit: 100
+4927174: 0 3 pc_bias_hit: 100
+4927208: 1 1 pc_bias_eviction: 100
+4927213: 3 4 pc_bias_eviction: 75
+4927227: 1 1 pc_bias_eviction: 100
+4927232: 0 1 pc_bias_hit: 100
+4927264: 1 1 pc_bias_eviction: 100
+4927297: 0 1 pc_bias_hit: 100
+4927347: 0 1 pc_bias_hit: 100
+4927360: 0 1 pc_bias_hit: 100
+4927424: 1 1 pc_bias_eviction: 100
+4927489: 1 1 pc_bias_eviction: 100
+4927552: 1 1 pc_bias_eviction: 100
+4927618: 1 1 pc_bias_eviction: 100
+4927683: 1 1 pc_bias_eviction: 100
+4927748: 0 1 pc_bias_hit: 100
+4927779: 0 1 pc_bias_hit: 100
+4927808: 1 2 pc_bias_hit: 50
+4927875: 1 1 pc_bias_eviction: 100
+4927889: 1 1 pc_bias_eviction: 100
+4927915: 0 1 pc_bias_hit: 100
+4927992: 0 1 pc_bias_hit: 100
+4928048: 0 1 pc_bias_hit: 100
+4928064: 1 1 pc_bias_eviction: 100
+4928128: 0 1 pc_bias_hit: 100
+4928194: 1 1 pc_bias_eviction: 100
+4928258: 1 1 pc_bias_eviction: 100
+4928324: 0 1 pc_bias_hit: 100
+4928387: 0 1 pc_bias_hit: 100
+4928448: 1 1 pc_bias_eviction: 100
+4930240: 0 1 pc_bias_hit: 100
+4930242: 0 1 pc_bias_hit: 100
+4930306: 0 1 pc_bias_hit: 100
+4930368: 0 1 pc_bias_hit: 100
+4930437: 1 1 pc_bias_eviction: 100
+4930448: 0 4 pc_bias_hit: 100
+4930498: 1 1 pc_bias_eviction: 100
+4930505: 0 7 pc_bias_hit: 100
+4930545: 0 2 pc_bias_hit: 100
+4930564: 0 1 pc_bias_hit: 100
+4930600: 0 1 pc_bias_hit: 100
+4930624: 1 1 pc_bias_eviction: 100
+4930676: 1 4 pc_bias_hit: 75
+4930689: 0 1 pc_bias_hit: 100
+4930740: 1 2 pc_bias_hit: 50
+4930754: 1 1 pc_bias_eviction: 100
+4930774: 0 1 pc_bias_hit: 100
+4930816: 0 1 pc_bias_hit: 100
+4930832: 0 1 pc_bias_hit: 100
+4930869: 0 1 pc_bias_hit: 100
+4930884: 1 1 pc_bias_eviction: 100
+4930892: 1 1 pc_bias_eviction: 100
+4930946: 0 1 pc_bias_hit: 100
+4931008: 0 1 pc_bias_hit: 100
+4931073: 0 1 pc_bias_hit: 100
+4931138: 0 2 pc_bias_hit: 100
+4931203: 0 1 pc_bias_hit: 100
+4931267: 0 1 pc_bias_hit: 100
+4931332: 0 1 pc_bias_hit: 100
+4931448: 0 2 pc_bias_hit: 100
+4931459: 0 1 pc_bias_hit: 100
+4932552: 1 1 pc_bias_eviction: 100
+4932568: 1 1 pc_bias_eviction: 100
+4932648: 1 1 pc_bias_eviction: 100
+4933248: 0 1 pc_bias_hit: 100
+4933312: 0 1 pc_bias_hit: 100
+4933392: 0 1 pc_bias_hit: 100
+4933443: 0 1 pc_bias_hit: 100
+4933447: 1 1 pc_bias_eviction: 100
+4933507: 1 1 pc_bias_eviction: 100
+5001424: 1 1 pc_bias_eviction: 100
+5001493: 0 1 pc_bias_hit: 100
+5003024: 1 1 pc_bias_eviction: 100
+5003038: 1 1 pc_bias_eviction: 100
+5003044: 0 1 pc_bias_hit: 100
+5003052: 2 2 pc_bias_eviction: 100
+5003064: 0 1 pc_bias_hit: 100
+5003074: 1 1 pc_bias_eviction: 100
+5003082: 0 1 pc_bias_hit: 100
+5003149: 3 5 pc_bias_eviction: 60
+5003162: 1 1 pc_bias_eviction: 100
+5003312: 1 2 pc_bias_hit: 50
+5003330: 1 1 pc_bias_eviction: 100
+5004976: 0 1 pc_bias_hit: 100
+5004986: 1 2 pc_bias_hit: 50
+5005456: 1 1 pc_bias_eviction: 100
+5040464: 1 1 pc_bias_eviction: 100
+5040512: 0 1 pc_bias_hit: 100
+5040541: 0 1 pc_bias_hit: 100
+5040576: 1 1 pc_bias_eviction: 100
+5040704: 0 1 pc_bias_hit: 100
+5051216: 0 1 pc_bias_hit: 100
+5051265: 0 1 pc_bias_hit: 100
+5051332: 1 1 pc_bias_eviction: 100
+5051381: 0 1 pc_bias_hit: 100
+5051393: 0 1 pc_bias_hit: 100
+5051456: 0 1 pc_bias_hit: 100
+5051521: 0 1 pc_bias_hit: 100
+5051686: 1 1 pc_bias_eviction: 100
+5051712: 1 1 pc_bias_eviction: 100
+5051742: 1 1 pc_bias_eviction: 100
+5051828: 1 1 pc_bias_eviction: 100
+5051844: 1 1 pc_bias_eviction: 100
+5051863: 3 6 pc_bias_hit: 50
+5051907: 0 1 pc_bias_hit: 100
+5051971: 1 1 pc_bias_eviction: 100
+5052034: 0 1 pc_bias_hit: 100
+5052104: 0 1 pc_bias_hit: 100
+5052160: 0 1 pc_bias_hit: 100
+5052227: 0 1 pc_bias_hit: 100
+5052290: 1 1 pc_bias_eviction: 100
+5052355: 0 1 pc_bias_hit: 100
+5052570: 0 1 pc_bias_hit: 100
+5052608: 0 1 pc_bias_hit: 100
+5052673: 1 1 pc_bias_eviction: 100
+5052736: 1 1 pc_bias_eviction: 100
+5052805: 1 1 pc_bias_eviction: 100
+5052866: 1 1 pc_bias_eviction: 100
+5052929: 0 1 pc_bias_hit: 100
+5053073: 1 1 pc_bias_eviction: 100
+5053102: 0 1 pc_bias_hit: 100
+5053124: 0 1 pc_bias_hit: 100
+5053185: 1 1 pc_bias_eviction: 100
+5053242: 0 1 pc_bias_hit: 100
+5053251: 1 1 pc_bias_eviction: 100
+5053321: 1 1 pc_bias_eviction: 100
+5053377: 0 1 pc_bias_hit: 100
+5053402: 9 30 pc_bias_hit: 70
+5053440: 1 1 pc_bias_eviction: 100
+5053510: 0 1 pc_bias_hit: 100
+5053585: 0 1 pc_bias_hit: 100
+5053941: 0 1 pc_bias_hit: 100
+5053952: 0 1 pc_bias_hit: 100
+5054022: 1 1 pc_bias_eviction: 100
+5054083: 0 1 pc_bias_hit: 100
+5054150: 1 1 pc_bias_eviction: 100
+5054342: 0 1 pc_bias_hit: 100
+5054350: 0 1 pc_bias_hit: 100
+5054440: 0 1 pc_bias_hit: 100
+5054464: 1 1 pc_bias_eviction: 100
+5054529: 0 1 pc_bias_hit: 100
+5054585: 0 1 pc_bias_hit: 100
+5054593: 0 1 pc_bias_hit: 100
+5054657: 0 1 pc_bias_hit: 100
+5054725: 0 1 pc_bias_hit: 100
+5054784: 1 1 pc_bias_eviction: 100
+5054848: 0 1 pc_bias_hit: 100
+5054915: 0 1 pc_bias_hit: 100
+5055226: 0 1 pc_bias_hit: 100
+5055284: 0 1 pc_bias_hit: 100
+5055298: 0 1 pc_bias_hit: 100
+5055363: 1 1 pc_bias_eviction: 100
+5055424: 0 1 pc_bias_hit: 100
+5055489: 1 1 pc_bias_eviction: 100
+5055552: 1 1 pc_bias_eviction: 100
+5055618: 0 1 pc_bias_hit: 100
+5055680: 1 1 pc_bias_eviction: 100
+5055745: 0 1 pc_bias_hit: 100
+5056357: 0 1 pc_bias_hit: 100
+5056392: 0 1 pc_bias_hit: 100
+5056415: 1 1 pc_bias_eviction: 100
+5056450: 0 1 pc_bias_hit: 100
+5056474: 7 19 pc_bias_hit: 63.1579
+5056513: 1 1 pc_bias_eviction: 100
+5056580: 1 1 pc_bias_eviction: 100
+5056656: 0 1 pc_bias_hit: 100
+5056815: 0 1 pc_bias_hit: 100
+5056835: 1 1 pc_bias_eviction: 100
+5056898: 0 1 pc_bias_hit: 100
+5056960: 0 1 pc_bias_hit: 100
+5057028: 0 1 pc_bias_hit: 100
+5057090: 0 1 pc_bias_hit: 100
+5057178: 0 1 pc_bias_hit: 100
+5057216: 0 1 pc_bias_hit: 100
+5057546: 0 1 pc_bias_hit: 100
+5057903: 0 1 pc_bias_hit: 100
+5057920: 0 1 pc_bias_hit: 100
+5057991: 0 1 pc_bias_hit: 100
+5058111: 0 1 pc_bias_hit: 100
+5058119: 0 1 pc_bias_hit: 100
+5058177: 0 1 pc_bias_hit: 100
+5058705: 0 1 pc_bias_hit: 100
+5058785: 1 1 pc_bias_eviction: 100
+5058821: 0 1 pc_bias_hit: 100
+5058930: 0 1 pc_bias_hit: 100
+5058966: 0 1 pc_bias_hit: 100
+5059168: 0 1 pc_bias_hit: 100
+5059320: 1 1 pc_bias_eviction: 100
+5059356: 0 1 pc_bias_hit: 100
+5059361: 0 1 pc_bias_hit: 100
+5084384: 0 1 pc_bias_hit: 100
+5084388: 0 1 pc_bias_hit: 100
+5084399: 0 1 pc_bias_hit: 100
+5084404: 1 1 pc_bias_eviction: 100
+5084417: 0 1 pc_bias_hit: 100
+5084656: 0 1 pc_bias_hit: 100
+5084675: 0 1 pc_bias_hit: 100
+5085328: 0 1 pc_bias_hit: 100
+5085376: 0 1 pc_bias_hit: 100
+5090352: 0 1 pc_bias_hit: 100
+5090360: 1 1 pc_bias_eviction: 100
+5090368: 1 1 pc_bias_eviction: 100
+5090404: 1 1 pc_bias_eviction: 100
+5090434: 0 1 pc_bias_hit: 100
+5090497: 1 1 pc_bias_eviction: 100
+5090560: 1 1 pc_bias_eviction: 100
+5090626: 1 1 pc_bias_eviction: 100
+5090689: 0 1 pc_bias_hit: 100
+5090754: 0 1 pc_bias_hit: 100
+5090767: 0 1 pc_bias_hit: 100
+5090816: 0 1 pc_bias_hit: 100
+5090880: 0 1 pc_bias_hit: 100
+5090949: 1 1 pc_bias_eviction: 100
+5091008: 1 1 pc_bias_eviction: 100
+5091074: 0 1 pc_bias_hit: 100
+5091155: 1 1 pc_bias_eviction: 100
+5091202: 0 1 pc_bias_hit: 100
+5091265: 0 1 pc_bias_hit: 100
+5091328: 0 1 pc_bias_hit: 100
+5091392: 0 1 pc_bias_hit: 100
+5091460: 1 1 pc_bias_eviction: 100
+5091523: 0 1 pc_bias_hit: 100
+5091584: 0 1 pc_bias_hit: 100
+5091648: 0 1 pc_bias_hit: 100
+5091732: 0 1 pc_bias_hit: 100
+5091778: 1 1 pc_bias_eviction: 100
+5091841: 0 1 pc_bias_hit: 100
+5091850: 0 1 pc_bias_hit: 100
+5091904: 0 1 pc_bias_hit: 100
+5091970: 0 1 pc_bias_hit: 100
+5092060: 0 1 pc_bias_hit: 100
+5092097: 0 1 pc_bias_hit: 100
+5092162: 0 1 pc_bias_hit: 100
+5092229: 1 1 pc_bias_eviction: 100
+5092289: 0 1 pc_bias_hit: 100
+5092352: 0 1 pc_bias_hit: 100
+5092418: 0 1 pc_bias_hit: 100
+5092482: 0 1 pc_bias_hit: 100
+5092546: 0 1 pc_bias_hit: 100
+5092608: 0 1 pc_bias_hit: 100
+5092675: 0 1 pc_bias_hit: 100
+5092737: 1 1 pc_bias_eviction: 100
+5092800: 0 1 pc_bias_hit: 100
+5092868: 1 1 pc_bias_eviction: 100
+5092928: 0 1 pc_bias_hit: 100
+5093024: 0 1 pc_bias_hit: 100
+5093090: 0 1 pc_bias_hit: 100
+5093160: 0 1 pc_bias_hit: 100
+5093200: 1 1 pc_bias_eviction: 100
+5093296: 0 1 pc_bias_hit: 100
+5093360: 0 1 pc_bias_hit: 100
+5093408: 0 1 pc_bias_hit: 100
+5093456: 0 1 pc_bias_hit: 100
+5093506: 0 1 pc_bias_hit: 100
+5093712: 0 1 pc_bias_hit: 100
+5146224: 1 2 pc_bias_hit: 50
+5146243: 0 1 pc_bias_hit: 100
+5146287: 1 1 pc_bias_eviction: 100
+5146309: 1 1 pc_bias_eviction: 100
+5146370: 0 1 pc_bias_hit: 100
+5146412: 29 129 pc_bias_hit: 77.5194
+5146428: 22 88 pc_bias_hit: 75
+5146437: 0 1 pc_bias_hit: 100
+5146499: 1 1 pc_bias_eviction: 100
+5146559: 0 1 pc_bias_hit: 100
+5146567: 0 1 pc_bias_hit: 100
+5146626: 1 1 pc_bias_eviction: 100
+5147024: 1 2 pc_bias_hit: 50
+5155472: 1 1 pc_bias_eviction: 100
+5155501: 0 1 pc_bias_hit: 100
+5155521: 1 1 pc_bias_eviction: 100
+5155842: 1 3 pc_bias_hit: 66.6667
+5155906: 1 1 pc_bias_eviction: 100
+5155968: 1 1 pc_bias_eviction: 100
+5156035: 0 1 pc_bias_hit: 100
+5156115: 0 1 pc_bias_hit: 100
+5156120: 1 1 pc_bias_eviction: 100
+5156162: 0 1 pc_bias_hit: 100
+5156226: 0 1 pc_bias_hit: 100
+5156230: 4 39 pc_bias_hit: 89.7436
+5156256: 0 1 pc_bias_hit: 100
+5156293: 1 1 pc_bias_eviction: 100
+5156297: 1 1 pc_bias_eviction: 100
+5156354: 1 1 pc_bias_eviction: 100
+5156418: 1 1 pc_bias_eviction: 100
+5156426: 0 1 pc_bias_hit: 100
+5156483: 0 1 pc_bias_hit: 100
+5156544: 1 1 pc_bias_eviction: 100
+5156571: 1 2 pc_bias_hit: 50
+5156611: 1 1 pc_bias_eviction: 100
+5156625: 1 1 pc_bias_eviction: 100
+5156672: 0 1 pc_bias_hit: 100
+5156768: 0 1 pc_bias_hit: 100
+5157469: 1 1 pc_bias_eviction: 100
+5157736: 1 1 pc_bias_eviction: 100
+5158012: 0 1 pc_bias_hit: 100
+5158018: 0 1 pc_bias_hit: 100
+5158084: 0 1 pc_bias_hit: 100
+5158144: 0 1 pc_bias_hit: 100
+5158208: 0 1 pc_bias_hit: 100
+5158273: 1 1 pc_bias_eviction: 100
+5158307: 0 3 pc_bias_hit: 100
+5158339: 1 1 pc_bias_eviction: 100
+5158400: 0 1 pc_bias_hit: 100
+5158447: 0 1 pc_bias_hit: 100
+5158467: 0 1 pc_bias_hit: 100
+5158524: 0 1 pc_bias_hit: 100
+5158532: 0 1 pc_bias_hit: 100
+5158595: 0 1 pc_bias_hit: 100
+5158657: 0 1 pc_bias_hit: 100
+5158720: 0 1 pc_bias_hit: 100
+5158785: 1 6 pc_bias_hit: 83.3333
+5158851: 0 1 pc_bias_hit: 100
+5158869: 1 101 pc_bias_hit: 99.0099
+5158878: 0 13 pc_bias_hit: 100
+5158920: 0 17 pc_bias_hit: 100
+5158977: 0 1 pc_bias_hit: 100
+tot_sum: 96385.9
+count_tot_pc: 1001
+Average_per_PC-bias: 96.2896
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:   116  ROW_BUFFER_MISS:   209
+ DBUS_CONGESTED:    43
+ WQ ROW_BUFFER_HIT:     0  ROW_BUFFER_MISS:     0  FULL:     0
+
+ AVG_CONGESTED_CYCLE: 6
+DRAM PAGES: 1048576
+Allocated PAGES: 181
+
+CEASER-S Statistics
+SLICE NO: 0
+Total sets remapped: 2
+Total LLC Stalled: 45
+Total Stall Cycles: 46
+
+L2C destructor called
+L1D destructor called
+L1I destructor called
+STLB destructor called
+DTLB destructor called
+ITLB destructor called

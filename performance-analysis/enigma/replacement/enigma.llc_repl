@@ -1,0 +1,223 @@
+#include "cache.h"
+#include "ceaser.h"
+#include <cmath>
+
+#define maxRRPV 7
+
+void CACHE::llc_initialize_replacement()
+{
+    cout << "Initialize SRRIP state" << endl;
+
+    for (int i = 0; i < LLC_SET; i++) {
+        for (int j = 0; j < LLC_WAY; j++) {
+            block[i][j].rrpv = maxRRPV;
+        }
+    }
+}
+
+uint32_t CACHE::llc_find_victim_ceaser_s(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t ip, uint64_t full_addr, uint32_t type, int part)
+{
+    uint64_t increment_rounds = 0;
+    while (1) {
+        for (uint32_t way = (part * (NUM_WAY / partitions)); way < NUM_WAY && (way < ((part + 1) * (NUM_WAY / partitions))); way++) {
+            if (block[set][way].rrpv == maxRRPV) {
+                if (block[set][way].rrpv < 8)
+                    rrpv_victim_histogram[block[set][way].rrpv]++;
+                total_rrpv_increment_rounds += increment_rounds;
+                total_rrpv_eviction_samples++;
+                return way;
+            }
+        }
+
+        for (uint32_t way = (part * (NUM_WAY / partitions)); way < NUM_WAY && (way < ((part + 1) * (NUM_WAY / partitions))); way++)
+            block[set][way].rrpv++;
+        increment_rounds++;
+    }
+
+    assert(0);
+    return 0;
+}
+
+uint32_t CACHE::llc_find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t ip, uint64_t full_addr, uint32_t type)
+{
+    uint64_t increment_rounds = 0;
+    while (1) {
+        for (int i = 0; i < LLC_WAY; i++) {
+            if (block[set][i].rrpv == maxRRPV) {
+                if (block[set][i].rrpv < 8)
+                    rrpv_victim_histogram[block[set][i].rrpv]++;
+                total_rrpv_increment_rounds += increment_rounds;
+                total_rrpv_eviction_samples++;
+                return i;
+            }
+        }
+
+        for (int i = 0; i < LLC_WAY; i++)
+            block[set][i].rrpv++;
+        increment_rounds++;
+    }
+
+    assert(0);
+    return 0;
+}
+
+void CACHE::remap_llc_update_replacement_state(uint32_t oldset, uint32_t way, uint32_t newset, uint32_t newway, uint64_t tag)
+{
+    block[newset][newway].rrpv = block[oldset][way].rrpv;
+    block[oldset][way].rrpv = maxRRPV;
+}
+
+void CACHE::llc_update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, uint64_t full_addr, uint64_t ip, uint64_t victim_addr, uint32_t type, uint8_t hit)
+{
+    string TYPE_NAME;
+    if (type == LOAD)
+        TYPE_NAME = "LOAD";
+    else if (type == RFO)
+        TYPE_NAME = "RFO";
+    else if (type == PREFETCH)
+        TYPE_NAME = "PF";
+    else if (type == WRITEBACK)
+        TYPE_NAME = "WB";
+    else
+        assert(0);
+
+    if (hit)
+        TYPE_NAME += "_HIT";
+    else
+        TYPE_NAME += "_MISS";
+
+    if ((type == WRITEBACK) && ip)
+        assert(0);
+
+#ifdef LLC_PRINT
+    if (all_warmup_complete > NUM_CPUS) {
+        cout << "CPU: " << cpu << "  " << NAME << " " << setw(9) << TYPE_NAME << " set: " << setw(5) << set << " way: " << setw(2) << way;
+        cout << hex << " paddr: " << setw(12) << full_addr << " ip: " << setw(8) << ip << " victim_addr: " << victim_addr << dec << endl;
+    }
+#endif
+
+    if (hit)
+        block[set][way].rrpv = 0;
+    else
+        block[set][way].rrpv = maxRRPV - 1;
+}
+
+void CACHE::llc_replacement_final_stats()
+{
+    for (int i = 0; i < 8; i++)
+        rrpv_final_histogram[i] = 0;
+
+    for (int skew = 0; skew < 2; skew++) {
+        for (int i = 0; i <= extra_tag_ways; i++)
+            tag_occupancy_histogram[skew][i] = 0;
+    }
+
+    for (uint32_t set = 0; set < LLC_SET; set++) {
+        for (uint32_t way = 0; way < LLC_WAY; way++) {
+            if (block[set][way].rrpv < 8)
+                rrpv_final_histogram[block[set][way].rrpv]++;
+        }
+
+        int tag0_occ = 0;
+        int tag1_occ = 0;
+        for (int tag_way = 0; tag_way < extra_tag_ways; tag_way++) {
+            if (tag0[set][tag_way].valid)
+                tag0_occ++;
+            if (tag1[set][tag_way].valid)
+                tag1_occ++;
+        }
+        tag_occupancy_histogram[0][tag0_occ]++;
+        tag_occupancy_histogram[1][tag1_occ]++;
+    }
+
+    uint64_t total_fills = 0;
+    uint64_t total_evictions = 0;
+    uint64_t min_fills = data_set_fill_count[0];
+    uint64_t max_fills = data_set_fill_count[0];
+    double fill_sum_sq = 0.0;
+    uint64_t total_tag0_in_use = 0;
+    uint64_t total_tag1_in_use = 0;
+
+    for (uint32_t set = 0; set < LLC_SET; set++) {
+        total_fills += data_set_fill_count[set];
+        total_evictions += data_set_eviction_count[set];
+        if (data_set_fill_count[set] < min_fills)
+            min_fills = data_set_fill_count[set];
+        if (data_set_fill_count[set] > max_fills)
+            max_fills = data_set_fill_count[set];
+        fill_sum_sq += double(data_set_fill_count[set]) * double(data_set_fill_count[set]);
+
+        for (int tag_way = 0; tag_way < extra_tag_ways; tag_way++) {
+            if (tag0[set][tag_way].valid)
+                total_tag0_in_use++;
+            if (tag1[set][tag_way].valid)
+                total_tag1_in_use++;
+        }
+    }
+
+    double avg_fills = (LLC_SET > 0) ? (double(total_fills) / double(LLC_SET)) : 0.0;
+    double variance = (LLC_SET > 0) ? (fill_sum_sq / double(LLC_SET)) - (avg_fills * avg_fills) : 0.0;
+    if (variance < 0.0)
+        variance = 0.0;
+    double stddev = std::sqrt(variance);
+    double fill_cv = (avg_fills > 0.0) ? (stddev / avg_fills) : 0.0;
+    double avg_tag0_occupancy = (LLC_SET > 0) ? (double(total_tag0_in_use) / double(LLC_SET)) : 0.0;
+    double avg_tag1_occupancy = (LLC_SET > 0) ? (double(total_tag1_in_use) / double(LLC_SET)) : 0.0;
+    double avg_tag0_free = double(extra_tag_ways) - avg_tag0_occupancy;
+    double avg_tag1_free = double(extra_tag_ways) - avg_tag1_occupancy;
+    double total_tag_capacity = double(2 * LLC_SET * extra_tag_ways);
+    double tag_utilization = (total_tag_capacity > 0.0) ? (double(total_tag0_in_use + total_tag1_in_use) / total_tag_capacity) : 0.0;
+    double sos_service_rate = (total_miss_at_tag_array > 0) ? (100.0 * double(deferred_sos_services) / double(total_miss_at_tag_array)) : 0.0;
+    double common_path_rate = (total_miss_at_tag_array > 0) ? (100.0 * double(ssl_common_path_selections) / double(total_miss_at_tag_array)) : 0.0;
+
+    cout << NAME << " Enigma Tag-Store Full Events: " << tag_store_full_events << endl;
+    cout << NAME << " Enigma Tag Inserts By Skew: skew0=" << tag_insert_count[0] << " skew1=" << tag_insert_count[1] << endl;
+    cout << NAME << " Enigma Tag Occupancy: skew0_avg=" << avg_tag0_occupancy << " skew1_avg=" << avg_tag1_occupancy
+         << " skew0_free_avg=" << avg_tag0_free << " skew1_free_avg=" << avg_tag1_free
+         << " utilization=" << tag_utilization << endl;
+    cout << NAME << " Enigma Tag Occupancy Histogram Skew0:";
+    for (int i = 0; i <= extra_tag_ways; i++)
+        cout << " [" << i << "]=" << tag_occupancy_histogram[0][i];
+    cout << endl;
+    cout << NAME << " Enigma Tag Occupancy Histogram Skew1:";
+    for (int i = 0; i <= extra_tag_ways; i++)
+        cout << " [" << i << "]=" << tag_occupancy_histogram[1][i];
+    cout << endl;
+    cout << NAME << " Enigma Path Selection: ssl_common=" << ssl_common_path_selections
+         << " deferred_sos=" << sos_forced_fill_selections
+         << " common_path_rate=" << common_path_rate
+         << " sos_service_rate=" << sos_service_rate << endl;
+    cout << NAME << " Enigma Deferred SoS Services: " << deferred_sos_services << endl;
+    cout << NAME << " Enigma Deferred SoS Dirty Writebacks: " << deferred_sos_dirty_writebacks << endl;
+    cout << NAME << " Enigma SoS Queue: enqueues=" << sos_enqueue_events
+         << " max_occupancy=" << sos_queue_max_occupancy
+         << " remaining=" << sos_queue_occupancy << endl;
+    cout << NAME << " Enigma Metadata Repairs: stale_tag_repairs=" << stale_tag_repairs << endl;
+    cout << NAME << " Enigma Data-Store Fills: total=" << total_fills << " min=" << min_fills << " max=" << max_fills
+         << " avg=" << avg_fills << " cv=" << fill_cv << endl;
+    cout << NAME << " Enigma Data-Store Evictions: " << total_evictions << endl;
+    cout << NAME << " Enigma Data-Store Occupancy Histogram:";
+    for (uint32_t occ = 0; occ <= LLC_WAY; occ++)
+        cout << " [" << occ << "]=" << data_set_occupancy_histogram[occ];
+    cout << endl;
+    cout << NAME << " Enigma Final RRPV Histogram:";
+    for (int i = 0; i < 8; i++)
+        cout << " [" << i << "]=" << rrpv_final_histogram[i];
+    cout << endl;
+    cout << NAME << " Enigma Victim RRPV Histogram:";
+    for (int i = 0; i < 8; i++)
+        cout << " [" << i << "]=" << rrpv_victim_histogram[i];
+    cout << endl;
+    cout << NAME << " Enigma Avg RRPV Increment Rounds Per Eviction: "
+         << (total_rrpv_eviction_samples ? (double(total_rrpv_increment_rounds) / double(total_rrpv_eviction_samples)) : 0.0)
+         << " total_rounds=" << total_rrpv_increment_rounds << " sampled_evictions=" << total_rrpv_eviction_samples << endl;
+}
+
+void CACHE::llc_update_ceaser_s(uint32_t set, uint32_t way)
+{
+}
+
+int CACHE::rrpv_value(uint32_t set, uint32_t way)
+{
+    return block[set][way].rrpv;
+}

@@ -1,0 +1,286 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 100000000
+Simulation Instructions: 100000000
+Number of CPUs: 1
+threads:1
+
+L1I Configuration:
+L1I_SET:64
+L1I_WAY:8
+L1I_RQ_SIZE:64
+L1I_WQ_SIZE:64
+L1I_PQ_SIZE:8
+L1I_MSHR_SIZE:8
+
+L1D Configuration:
+L1D_SET:64
+L1D_WAY:12
+L1D_RQ_SIZE:64
+L1D_WQ_SIZE:64
+L1D_PQ_SIZE:8
+L1D_MSHR_SIZE:16
+
+L2C Configuration:
+L2C_SET:1024
+L2C_WAY:8
+L2C_RQ_SIZE:32
+L2C_WQ_SIZE:32
+L2C_PQ_SIZE:16
+L2C_MSHR_SIZE:32
+
+LLC Configuration:
+LLC_SET:2048
+LLC_WAY:12
+LLC SLICES:1
+LLC_RQ_SIZE:64
+LLC_WQ_SIZE:64
+LLC_PQ_SIZE:32
+LLC_MSHR_SIZE:64
+
+Interconnect OFF
+Attacker deprioritize is: OFF
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+PAGE SIZE in KB: 4.000000 
+PAGE SIZE in MB: 0.003906 
+PAGE offset in bits: 12 
+CEASER-S_LLC:0
+MAYA : 1
+CEASER_LATENCY:3
+REMAP : OFF
+Partitions : 1
+Multi-Step : OFF
+BFS : OFF
+
+CPU 0 runs /home/prathamesh/Desktop/orignal_biswa/Randomized-Caches-master/dpc3_traces/bc-5.trace.gz
+CPU 0 Bimodal branch predictor
+Initialize SRRIP state
+Heartbeat CPU 0 instructions: 10000003 cycles: 8680476 heartbeat IPC: 1.15201 cumulative IPC: 1.15201 (Simulation time: 0 hr 0 min 55 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 20000000 cycles: 16502230 heartbeat IPC: 1.27849 cumulative IPC: 1.21196 (Simulation time: 0 hr 1 min 41 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 30000003 cycles: 23568122 heartbeat IPC: 1.41525 cumulative IPC: 1.27291 (Simulation time: 0 hr 2 min 28 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 40000002 cycles: 30199540 heartbeat IPC: 1.50797 cumulative IPC: 1.32452 (Simulation time: 0 hr 3 min 16 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24577 Pr0 Tags : 12287 Pr1 Tags : 24576 num_pr0 : 12287
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 50000001 cycles: 36812784 heartbeat IPC: 1.51212 cumulative IPC: 1.35822 (Simulation time: 0 hr 4 min 5 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 60000003 cycles: 43154346 heartbeat IPC: 1.5769 cumulative IPC: 1.39036 (Simulation time: 0 hr 4 min 53 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 70000000 cycles: 49496846 heartbeat IPC: 1.57666 cumulative IPC: 1.41423 (Simulation time: 0 hr 5 min 43 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 80000002 cycles: 55646056 heartbeat IPC: 1.62623 cumulative IPC: 1.43766 (Simulation time: 0 hr 6 min 34 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24578 Pr0 Tags : 12286 Pr1 Tags : 24576 num_pr0 : 12286
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 90000000 cycles: 61805863 heartbeat IPC: 1.62343 cumulative IPC: 1.45617 (Simulation time: 0 hr 7 min 25 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24577 Pr0 Tags : 12287 Pr1 Tags : 24576 num_pr0 : 12287
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 100000002 cycles: 67772002 heartbeat IPC: 1.67613 cumulative IPC: 1.47554 (Simulation time: 0 hr 8 min 15 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+
+Warmup complete CPU 0 instructions: 100000002 cycles: 67772002 (Simulation time: 0 hr 8 min 15 sec) 
+
+Heartbeat CPU 0 instructions: 110000000 cycles: 123667228 heartbeat IPC: 0.178906 cumulative IPC: 0.178906 (Simulation time: 0 hr 10 min 1 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 120000003 cycles: 179371392 heartbeat IPC: 0.17952 cumulative IPC: 0.179212 (Simulation time: 0 hr 11 min 47 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24577 Pr0 Tags : 12287 Pr1 Tags : 24576 num_pr0 : 12287
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 130000001 cycles: 235658963 heartbeat IPC: 0.177659 cumulative IPC: 0.178692 (Simulation time: 0 hr 13 min 34 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 140000001 cycles: 283234500 heartbeat IPC: 0.210192 cumulative IPC: 0.185647 (Simulation time: 0 hr 15 min 24 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+FILL
+Heartbeat CPU 0 instructions: 150000000 cycles: 320942018 heartbeat IPC: 0.265199 cumulative IPC: 0.197496 (Simulation time: 0 hr 17 min 17 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 160000000 cycles: 358623565 heartbeat IPC: 0.265382 cumulative IPC: 0.206291 (Simulation time: 0 hr 19 min 10 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24577 Pr0 Tags : 12287 Pr1 Tags : 24576 num_pr0 : 12287
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 170000000 cycles: 396598216 heartbeat IPC: 0.263334 cumulative IPC: 0.212878 (Simulation time: 0 hr 21 min 6 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 180000002 cycles: 434798083 heartbeat IPC: 0.261781 cumulative IPC: 0.217968 (Simulation time: 0 hr 23 min 3 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 190000001 cycles: 472786580 heartbeat IPC: 0.263238 cumulative IPC: 0.222214 (Simulation time: 0 hr 25 min 1 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Heartbeat CPU 0 instructions: 200000001 cycles: 510853239 heartbeat IPC: 0.262697 cumulative IPC: 0.225692 (Simulation time: 0 hr 26 min 59 sec) 
+ Total Blocks : 24576 Invalid Blocks : 0 Valid Blocks : 24576
+ Total Tags : 61440 Threshold : 12288 Invalid Tags : 24576 Pr0 Tags : 12288 Pr1 Tags : 24576 num_pr0 : 12288
+ SAE Count : 0
+ Inter-Core Inteference in Data Store : 0
+Finished CPU 0 instructions: 100000003 cycles: 443081239 cumulative IPC: 0.225692 (Simulation time: 0 hr 26 min 59 sec) 
+
+CPU 0 Branch Prediction Accuracy: 97.7193% MPKI: 5.00344 Average ROB Occupancy at Mispredict: 133.485
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.225692 instructions: 100000003 cycles: 443081239
+ITLB TOTAL     ACCESS: 17938485  HIT: 17938485  MISS:     0  HIT %:   100  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB LOAD      ACCESS: 17938485  HIT: 17938485  MISS:     0  HIT %:   100  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB RFO       ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+ITLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+ITLB AVERAGE MISS LATENCY: -nan cycles
+
+ITLB Set Associative Eviction Count : 0
+ITLB Priority 0 entries : 0
+ITLB Inter-Core Interference : 0
+DTLB TOTAL     ACCESS: 19095571  HIT: 15076861  MISS: 4018710  HIT %: 78.9548  MISS %: 21.0452  AVERAGE MISS PENALTY: 41.016
+DTLB LOAD      ACCESS: 16769904  HIT: 13162335  MISS: 3607569  HIT %: 78.4878  MISS %: 21.5122  AVERAGE MISS PENALTY: 34.8091
+DTLB RFO       ACCESS: 2325667  HIT: 1914526  MISS: 411141  HIT %: 82.3216  MISS %: 17.6784  AVERAGE MISS PENALTY: 95.4784
+DTLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+DTLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+DTLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+DTLB AVERAGE MISS LATENCY: 41.016 cycles
+
+DTLB Set Associative Eviction Count : 0
+DTLB Priority 0 entries : 0
+DTLB Inter-Core Interference : 0
+STLB TOTAL     ACCESS: 4018710  HIT: 3399692  MISS: 619018  HIT %: 84.5966  MISS %: 15.4034  AVERAGE MISS PENALTY: 100
+STLB LOAD      ACCESS: 3607569  HIT: 3217147  MISS: 390422  HIT %: 89.1777  MISS %: 10.8223  AVERAGE MISS PENALTY: 100
+STLB RFO       ACCESS: 411141  HIT: 182545  MISS: 228596  HIT %: 44.3996  MISS %: 55.6004  AVERAGE MISS PENALTY: 100
+STLB PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+STLB WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+STLB PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+STLB AVERAGE MISS LATENCY: 100 cycles
+
+STLB Set Associative Eviction Count : 0
+STLB Priority 0 entries : 0
+STLB Inter-Core Interference : 0
+L1D TOTAL     ACCESS: 19226610  HIT: 10349466  MISS: 8877144  HIT %: 53.8289  MISS %: 46.1711  AVERAGE MISS PENALTY: 142.922
+L1D LOAD      ACCESS: 16049427  HIT: 7189193  MISS: 8860234  HIT %: 44.7941  MISS %: 55.2059  AVERAGE MISS PENALTY: 142.71
+L1D RFO       ACCESS: 3177183  HIT: 3160273  MISS: 16910  HIT %: 99.4678  MISS %: 0.532232  AVERAGE MISS PENALTY: 254.044
+L1D PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1D WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1D PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1D AVERAGE MISS LATENCY: 142.922 cycles
+
+L1D Set Associative Eviction Count : 0
+L1D Priority 0 entries : 0
+L1D Inter-Core Interference : 0
+L1I TOTAL     ACCESS: 26320779  HIT: 26320779  MISS:     0  HIT %:   100  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I LOAD      ACCESS: 26320779  HIT: 26320779  MISS:     0  HIT %:   100  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I RFO       ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I WRITEBACK ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L1I PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1I AVERAGE MISS LATENCY: -nan cycles
+
+L1I Set Associative Eviction Count : 0
+L1I Priority 0 entries : 0
+L1I Inter-Core Interference : 0
+L2C TOTAL     ACCESS: 10431395  HIT: 3404450  MISS: 7026945  HIT %: 32.6366  MISS %: 67.3634  AVERAGE MISS PENALTY: 149.548
+L2C LOAD      ACCESS: 8860234  HIT: 1850064  MISS: 7010170  HIT %: 20.8805  MISS %: 79.1195  AVERAGE MISS PENALTY: 149.336
+L2C RFO       ACCESS: 16910  HIT:   167  MISS: 16743  HIT %: 0.987581  MISS %: 99.0124  AVERAGE MISS PENALTY: 238.665
+L2C PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+L2C WRITEBACK ACCESS: 1554251  HIT: 1554219  MISS:    32  HIT %: 99.9979  MISS %: 0.00205887  AVERAGE MISS PENALTY: 0
+L2C PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L2C AVERAGE MISS LATENCY: 149.548 cycles
+
+L2C Set Associative Eviction Count : 0
+L2C Priority 0 entries : 0
+L2C Inter-Core Interference : 0
+LLC0 TOTAL     ACCESS: 8495235  HIT: 3306563  MISS: 5188672  HIT %: 38.9226  MISS %: 61.0774  AVERAGE MISS PENALTY: 147.581
+LLC0 LOAD      ACCESS: 7010170  HIT: 2687334  MISS: 4322836  HIT %: 38.3348  MISS %: 61.6652  AVERAGE MISS PENALTY: 176.376
+LLC0 RFO       ACCESS: 16743  HIT:    49  MISS: 16694  HIT %: 0.29266  MISS %: 99.7073  AVERAGE MISS PENALTY: 198.048
+LLC0 PREFETCH  ACCESS:     0  HIT:     0  MISS:     0  HIT %:     0  MISS %:     0  AVERAGE MISS PENALTY: 0
+LLC0 WRITEBACK ACCESS: 1468322  HIT: 619180  MISS: 849142  HIT %: 42.1692  MISS %: 57.8308  AVERAGE MISS PENALTY: 0
+LLC0 PREFETCH  REQUESTED:     0  ISSUED:     0  USEFUL:     0  USELESS:     0
+ USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+LLC0 AVERAGE MISS LATENCY: 147.581 cycles
+
+LLC0 Set Associative Eviction Count : 0
+LLC0 Priority 0 entries : 12288
+LLC0 Inter-Core Interference : 0
+ROI Average ROB Stall Cycles:	16.0163
+ROI Total ROB Stalls Cycles:	418857450
+ROI TOTAL ROB counter      :	26151879
+ROI Average Load ROB Stall Cycles:	86.8972
+ROI Total Load ROB Stalls Cycle  :	255259203
+ROI Total Load ROB stalls Counter:	2937484
+Major fault: 0 Minor fault: 26124
+Interconnect Stats 
+LINK 0 BW : 0
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT: 1115953  ROW_BUFFER_MISS: 3223494
+ DBUS_CONGESTED: 1580865
+ WQ ROW_BUFFER_HIT: 390719  ROW_BUFFER_MISS: 597066  FULL:     0
+
+ AVG_CONGESTED_CYCLE: 6
+DRAM PAGES: 1048576
+Allocated PAGES: 26124
+L2C destructor called
+L1D destructor called
+L1I destructor called
+STLB destructor called
+DTLB destructor called
+ITLB destructor called
